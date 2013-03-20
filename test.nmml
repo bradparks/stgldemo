@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project>
+    <app title="test" file="test" main="com.abagames.stgldemo.Main" version="0.0.1" company="tester" />
+     
+    <window width="640" height="480" fps="30" orientation="portrait" resizable="true" if="web" />
+    <window width="640" height="480" fps="30" orientation="landscape" fullscreen="true" unless="web" />
+     
+    <set name="BUILD_DIR" value="export" />
+     
+    <haxelib name="nme" />
+    <classpath name="src" />
+</project>

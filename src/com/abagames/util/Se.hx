@@ -1,6 +1,4 @@
 package com.abagames.util;
-import org.si.sion.SiONDriver;
-import org.si.sion.SiONData;
 using Math;
 using com.abagames.util.FloatUtil;
 class Se {
@@ -56,9 +54,6 @@ class Se {
 	}
 	public function e():Se {
 		isStarting = false;
-		data = driver.compile(mml);
-		driver.volume = 0;
-		driver.play();
 		s.push(this);
 		return this;
 	}
@@ -72,9 +67,7 @@ class Se {
 		["c", "c+", "d", "d+", "e", "f", "f+", "g", "g+", "a", "a+", "b"],
 		["c", "d", "e", "g", "a"],
 		["c", "d-", "e-", "g-", "a-"]];
-	static var driver:SiONDriver = new SiONDriver();
 	static var isStarting = false;
-	var data:SiONData;
 	var isPlaying = false;
 	var mml:String;
 	var type:SeType;
@@ -84,10 +77,8 @@ class Se {
 		lastPlayTicks--;
 		if (!isPlaying) return;
 		if (!isStarting) {
-			driver.volume = 0.9;
 			isStarting = true;
 		}
-		driver.sequenceOn(data, null, 0, 0, 0);
 		isPlaying = false;
 		lastPlayTicks = 5;
 	}
